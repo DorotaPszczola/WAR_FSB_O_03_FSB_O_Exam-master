@@ -142,7 +142,7 @@ Do każdego elementu z listy dodaj przycisk "Usuń". Po jego kliknięciu, dany e
 
 ---
 
-## Zadanie 6 - Filtrowanie ToDo na podsawie routingu (2.5 pkt.)
+## Zadanie 6 - Filtrowanie ToDo na podstawie routingu (2.5 pkt.)
 Po kliknięciu w linki, stworzone w zadaniu 1, lista powinna zawierać odflitrowane elementy:
 
 - `/` - All - wszystkie elementy są widoczne
