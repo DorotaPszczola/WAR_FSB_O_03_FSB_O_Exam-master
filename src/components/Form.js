@@ -5,10 +5,8 @@ const Form = ({ add }) => {
     const [value, setValue] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("form title", title);
         add(value)
     }
-    console.log("add", {add})
 
     return (
         <form onSubmit={handleSubmit}>

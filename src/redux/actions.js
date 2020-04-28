@@ -2,6 +2,7 @@
 const ADD_TODO = "[TODO LIST] ADD_TODO";
 const TODO_TOGGLED = "[TODO LIST] TOGGLE DONE / NOT DONE";
 const TODO_REMOVED = "[TODO LIST] REMOVE TODO";
+const TODO_REMOVE_DELAYED = "[TODO LIST] REMOVE TODO IN 2 SEC"
 
 const add = (title) => ({
     type: ADD_TODO,
@@ -14,8 +15,17 @@ const toggle = (payload) => ({
 })
 
 const remove = (payload) => ({
-    type: TODO_TOGGLED,
+    type: TODO_REMOVED,
     payload
 })
 
-export { ADD_TODO, TODO_TOGGLED,TODO_REMOVED, toggle, add, remove }
+const asyncRemove = (payload) => ({
+    type: TODO_REMOVE_DELAYED,
+    payload
+
+})
+
+export {
+    ADD_TODO, TODO_TOGGLED, TODO_REMOVED, TODO_REMOVE_DELAYED,
+    asyncRemove, toggle, add, remove
+}

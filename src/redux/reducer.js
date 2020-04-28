@@ -22,14 +22,20 @@ const todos = (state = toDoInit, action) => {
         }]
       )
     case TODO_TOGGLED:
-      const newState = [...state];
+      let newState = [...state];
       newState.forEach(todo => {
-        if (todo.title === action.payload) {
+        // if (todo.title === action.payload) {
+        if (todo.title === action.payload.title) {
           todo.done = !todo.done
         }
       })
       return newState;
+    case TODO_REMOVED:
+      const toDos = state.filter(item => item.title !== action.payload)
 
+      return ([
+        ...toDos
+      ]);
     default:
       return state;
   }

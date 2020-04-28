@@ -2,17 +2,24 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const List = ({ items, toggle, remove }) => {
+    const handleRemove = (e) => {
+        e.preventDefault();
+        remove(e.target.id)
+    }
+
+    // const handleToggle = (e) => {
+    //     toggle(e.target.id)
+    // }
 
     return (
         <ul>
             {items.map((item) => {
-                const styleDone = { textDecoration: item.done ? "line-through" : "none" }
-                console.log("item.title", item)
+                const styleDone = { textDecoration: item.done && "line-through"}
                 return (
 
                     <li key={item.title} >
-                        <span style={styleDone} onClick={() => toggle(item.done)}>{item.title}</span>
-                        <button name={item.title} onClick={() => remove(item)} >Usuń</button>
+                        <span id={item.title} style={styleDone} onClick={() => toggle(item)}>  {item.title}  </span>
+                        <button id={item.title} name={item.title} onClick={handleRemove} >Usuń</button>
                     </li>
                 )
             })
