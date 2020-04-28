@@ -1,7 +1,7 @@
 
 const ADD_TODO = "[TODO LIST] ADD_TODO";
-const TODO_TOGGLED = "[TODO LIST] TODO_TOGGLED";
-const TODO_REMOVED = "[TODO LIST] TODO_REMOVED";
+const TODO_TOGGLED = "[TODO LIST] TOGGLE DONE / NOT DONE";
+const TODO_REMOVED = "[TODO LIST] REMOVE TODO";
 
 const add = (title) => ({
     type: ADD_TODO,

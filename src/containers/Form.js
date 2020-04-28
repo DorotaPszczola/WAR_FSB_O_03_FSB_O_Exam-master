@@ -1,3 +1,4 @@
+import React from "react";
 import { connect } from 'react-redux';
 import { add } from "../redux/actions";
 import Form from "../components/Form";
@@ -7,12 +8,8 @@ Form.propTypes = {
     addToDo: PropTypes.func
 }
 
-// const mapState = (state) => {
-
-// };
-
-const mapDispatch = (dispatch) => ({
-    add: todo => dispatch(add(todo)) //add to props przekazywany do komponentu
+const mapDispatch = dispatch => ({
+    add: todo => dispatch(add(todo))
 })
 
 export default connect(null, mapDispatch)(Form);

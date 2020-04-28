@@ -1,13 +1,14 @@
 import React , {useState} from "react";
-import { add } from "../redux/actions"
 
 const Form = ({ add }) => {
 
     const [value, setValue] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("form title", title);
         add(value)
     }
+    console.log("add", {add})
 
     return (
         <form onSubmit={handleSubmit}>
@@ -17,7 +18,7 @@ const Form = ({ add }) => {
     )
 }
 
-export default Form
+export default Form;
 // ref={(el) => this.inputEl = el}
 
 //onClick={() => this.props.addProduct(this.inputEl.value)}

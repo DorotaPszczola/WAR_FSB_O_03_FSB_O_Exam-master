@@ -1,9 +1,13 @@
 import { combineReducers } from "redux";
-import { ADD_TODO, TODO_TOGGLED } from "./actions"
+import { ADD_TODO, TODO_TOGGLED, TODO_REMOVED } from "./actions"
 
 const toDoInit = [{
   title: "Nazwa elementu",
   done: false
+},
+{
+  title: "Jakiś task zrobiony",  // nazwa elementu
+  done: true               // flaga oznaczająca czy element został wykonany, na początku ustawiona na false
 }]
 
 const todos = (state = toDoInit, action) => {
@@ -18,14 +22,13 @@ const todos = (state = toDoInit, action) => {
         }]
       )
     case TODO_TOGGLED:
-      const newState = [...state ];
+      const newState = [...state];
       newState.forEach(todo => {
         if (todo.title === action.payload) {
           todo.done = !todo.done
         }
       })
-
-      return newState
+      return newState;
 
     default:
       return state;

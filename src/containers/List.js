@@ -1,6 +1,6 @@
 
 import { connect } from 'react-redux';
-import { add, toggle } from "../redux/actions";
+import { add, toggle, remove } from "../redux/actions";
 import List from "../components/List";
 import PropTypes from "prop-types"
 
@@ -12,7 +12,7 @@ const mapState = (store) => ({
 
 const mapDispatch = (dispatch) => ({
     toggle: todo => dispatch(toggle(todo)),
-    remove: () => { }, // zad 5
+    remove: todo => dispatch(remove(todo)),
     asyncRemove: () => { }, //zad7
 })
 

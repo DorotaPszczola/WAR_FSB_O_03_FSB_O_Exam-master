@@ -7,6 +7,7 @@ const List = ({ items, toggle, remove }) => {
         <ul>
             {items.map((item) => {
                 const styleDone = { textDecoration: item.done ? "line-through" : "none" }
+                console.log("item.title", item)
                 return (
 
                     <li key={item.title} >
