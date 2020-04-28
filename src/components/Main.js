@@ -1,13 +1,13 @@
 import React from "react";
 import Form from "../containers/Form"
-import { Provider } from "react-redux";
-import store from "../redux/store";
+import List from "../containers/List"
 
 
 const Main = () => (
-  <Provider store={store}>
-    <Form/>
-  </Provider>
+  <>
+    <List />
+    <Form />
+  </>
 );
 
 export default Main;
