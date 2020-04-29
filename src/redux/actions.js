@@ -24,8 +24,13 @@ const asyncRemove = (payload) => ({
     payload
 
 })
+const removeDelayed = (todo) => dispatch => {
+    dispatch(asyncRemove)
+    setTimeout(() => dispatch(remove(todo)), 2000);
+}
+
 
 export {
     ADD_TODO, TODO_TOGGLED, TODO_REMOVED, TODO_REMOVE_DELAYED,
-    asyncRemove, toggle, add, remove
+    asyncRemove, toggle, add, remove, removeDelayed
 }

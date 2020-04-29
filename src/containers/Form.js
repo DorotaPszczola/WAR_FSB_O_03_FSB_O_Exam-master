@@ -12,4 +12,4 @@ const mapDispatch = dispatch => ({
     add: todo => dispatch(add(todo))
 })
 
-export default connect(null, mapDispatch)(Form);
+export default connect(null, mapDispatch) (Form);

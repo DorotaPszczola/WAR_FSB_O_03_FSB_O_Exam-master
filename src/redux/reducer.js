@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { ADD_TODO, TODO_TOGGLED, TODO_REMOVED } from "./actions"
+import { ADD_TODO, TODO_TOGGLED, TODO_REMOVED, TODO_REMOVE_DELAYED } from "./actions"
 
 const toDoInit = [{
   title: "Nazwa elementu",
@@ -13,7 +13,6 @@ const toDoInit = [{
 const todos = (state = toDoInit, action) => {
   switch (action.type) {
     case ADD_TODO:
-
       return ([
         ...state,
         {
@@ -21,6 +20,7 @@ const todos = (state = toDoInit, action) => {
           done: false
         }]
       )
+
     case TODO_TOGGLED:
       let newState = [...state];
       newState.forEach(todo => {
@@ -30,12 +30,19 @@ const todos = (state = toDoInit, action) => {
         }
       })
       return newState;
+
     case TODO_REMOVED:
       const toDos = state.filter(item => item.title !== action.payload)
-
       return ([
         ...toDos
       ]);
+
+    case TODO_REMOVE_DELAYED:
+      const newtoDos = state.filter(item => item.title !== action.payload)
+      return ([
+        ...newtoDos
+      ]);
+
     default:
       return state;
   }
